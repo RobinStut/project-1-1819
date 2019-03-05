@@ -4,7 +4,7 @@
 
 ### concept: OBA Maatje
 
-[Bekijk de applicatie](https://github.com/cmda-minor-web/css-to-the-rescue-1819)
+[Bekijk de applicatie](https://robinstut.github.io/project-1-1819/)
 
 
 Binnen de OBA is er de mogelijkheid om een OBA maatje aan te vragen wanneer je slecht ter been bent of zodra je fysiek niet in staat bent om de OBA te bezoeken. Wanneer dit het geval is kan je momenteel een mail sturen of telefonisch contact op nemen om door te geven dat je hier interesse in hebt. Je wordt vervolgens gekoppeld aan een Maatje en zodra deze match bevalt, krijg je eens per maand bezoek van jouw Maatje. Het Maatje neemt boeken mee die jij zelf hebt geselecteerd, op een dag die jullie samen hebben afgesproken. Het contact tussen elkaar moet zelf onderhouden worden en het doorgeven of de afspraak netjes verlopen is, moet via de OBA worden aangegeven.
