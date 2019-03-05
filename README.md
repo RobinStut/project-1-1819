@@ -1,9 +1,34 @@
 # Project 1 @cmda-minor-web · 2018-2019
 
-## Zoek in de de collectie van de OBA
+## Maak een verbetering op de OBA website met behulp van de API
 
-Het project vindt plaats bij de Centrale OBA. Maandagochtend is om 10.00 uur de kickoff, vrijdag zijn de presentaties van de resultaten. In een week bouwt iedere student een eigen prototype dat bezoekers kan helpen om items uit de OBA collectie te vinden. Technieken geleerd bij [CSS to the Rescue](https://github.com/cmda-minor-web/css-to-the-rescue-1819) en [Web App from Scratch](https://github.com/cmda-minor-web/web-app-from-scratch-1819) worden toegepast bij het bouwen van de de prototypes.
+### concept: OBA Maatje
 
-We verzamelen maandagochtend om 09.45 op de 1e verdieping van de Centrale OBA, [Oosterdokskade 143](https://www.google.com/maps/place/OBA+library+of+Amsterdam/@52.3756983,4.9082087,15z/data=!4m2!3m1!1s0x0:0x6b97f693e6ecb494?ved=2ahUKEwioo6OrzubgAhWLNOwKHR6KDQgQ_BIwCnoECAYQCA).
+[Bekijk de applicatie](https://github.com/cmda-minor-web/css-to-the-rescue-1819)
 
 
+Binnen de OBA is er de mogelijkheid om een OBA maatje aan te vragen wanneer je slecht ter been bent of zodra je fysiek niet in staat bent om de OBA te bezoeken. Wanneer dit het geval is kan je momenteel een mail sturen of telefonisch contact op nemen om door te geven dat je hier interesse in hebt. Je wordt vervolgens gekoppeld aan een Maatje en zodra deze match bevalt, krijg je eens per maand bezoek van jouw Maatje. Het Maatje neemt boeken mee die jij zelf hebt geselecteerd, op een dag die jullie samen hebben afgesproken. Het contact tussen elkaar moet zelf onderhouden worden en het doorgeven of de afspraak netjes verlopen is, moet via de OBA worden aangegeven.
+
+#### Mijn idee
+
+Het afspreken van een datum voor een bezoek dien je nu zelf af te spreken op een methode die voor iedereen anders kan zijn. De boekenlijst moet je ook zelf doorgeven aan jouw maatje, die dit vervolgens weer aan de OBA door moet geven. Ik wil een centraal platform creëren waar de patient zijn interesses kan doorgeven qua bestellingen, een datum kan doorgeven en kan doorgeven of de afspraak zoals gewenst verlopen is. Ook het Maatje heeft de optie om aan te geven dat de afspraak correct verlopen is, en kan ook zijn of haar beschikbaarheden afstemmen met de patient. Tevens heeft het Maatje inzicht in waar de locatie is van de patient, om zo de afspraak te versimpelen.
+
+#### Visuals concept
+
+OBA algemeen ontwerp
+![visual1](visual1.png)
+
+OBA patient overzicht, selectie maken en afspraak maken
+![visual2](visual2.png)
+
+OBA Maatje afspraak maken
+![visual3](visual3.png)
+
+
+## Installatie proces
+
+```
+git clone https://github.com/RobinStut/project-1-1819.git
+
+cd project-1-1819
+```
