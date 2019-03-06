@@ -1,5 +1,5 @@
-// localStorage.setItem('test1', JSON.stringify('welkom'));
-console.log(localStorage.length);
+console.log('localStorage lengte is ' + (localStorage.length));
+// localStorage.clear();
 
 // var clear = (function() {
 //   var myItem = localStorage.getItem('search');
@@ -10,13 +10,16 @@ console.log(localStorage.length);
 var init = (function () {
     if (localStorage.getItem("search") === null) {
       console.log('init if');
-      console.log(localStorage.getItem("search"));
+      // console.log(localStorage.getItem("search"));
+      console.log();
       api();
     }
     if (localStorage.getItem("search") !== null) {
-      console.log('init else');
-      local.parse()
-      console.log(local.parse());
+      console.log('init.if search bestaat');
+      console.log('data gebruiken uit local storage');
+      local.parse();
+      render.overview(local.parse());
+      // console.log(local.parse());
     }
 });
 
@@ -39,10 +42,11 @@ var api = (
 var dataHandle = {
   get: function (incoming) {
     console.log('dataHandle.get');
+    // console.log(incoming);
     localStorage.setItem('search', JSON.stringify(incoming));
     var parsedLocalData = JSON.parse(localStorage.getItem('search'));
     console.log(parsedLocalData);
-  }
+  },
 }
 
 var local = {
@@ -53,6 +57,34 @@ var local = {
 }
 
 var render = {
+  overview: function (data) {
+    console.log(data);
+    var id = document.getElementById('wrapper');
+    var covers = data.map(function(data) {
+
+      function undef(data) {
+        // console.log(data);
+        var summary = data.summaries ? data.summaries.summary._text : "Geen beschrijving beschikbaar";
+        return summary;
+      }
+
+      return `
+      <ul>
+          <img src="${data.coverimages.coverimage[data.coverimages.coverimage.length -1]._text} " alt="${data.titles["short-title"]._text}">
+          <li>${data.titles["short-title"]._text}</li>
+          <li>${data.authors["main-author"]._text}</li>
+          <li>${undef(data)}</li>
+      </ul>`;
+      })
+      .join("");
+
+    id.insertAdjacentHTML('afterbegin', covers);
+    // console.log(covers);
+
+  }
 }
+
+
+
 
 init();
