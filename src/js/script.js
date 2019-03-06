@@ -24,14 +24,15 @@ var init = (function () {
 });
 
 var api = (
-  async () => {
+  async (data) => {
     // localStorage.clear();
+    console.log('er wordt gezocht naar "'+ data + '"');
     console.log('Geen local storage');
     let testData ;
     const api = new API({
         key: "1e19898c87464e239192c8bfe422f280"
     });
-    const stream = await api.createStream("search/banaan{5}");
+    const stream = await api.createStream("search/"+data+"{5}");
     stream
       // .pipe(stringify)
       .pipe(dataHandle.get)
@@ -45,7 +46,8 @@ var dataHandle = {
     // console.log(incoming);
     localStorage.setItem('search', JSON.stringify(incoming));
     var parsedLocalData = JSON.parse(localStorage.getItem('search'));
-    console.log(parsedLocalData);
+    // console.log(parsedLocalData);
+    render.overview(parsedLocalData);
   },
 }
 
@@ -59,32 +61,56 @@ var local = {
 var render = {
   overview: function (data) {
     console.log(data);
-    var id = document.getElementById('wrapper');
+    var wrapper = document.getElementById('wrapper');
+
     var covers = data.map(function(data) {
-
-      function undef(data) {
-        // console.log(data);
-        var summary = data.summaries ? data.summaries.summary._text : "Geen beschrijving beschikbaar";
-        return summary;
-      }
-
       return `
       <ul>
           <img src="${data.coverimages.coverimage[data.coverimages.coverimage.length -1]._text} " alt="${data.titles["short-title"]._text}">
           <li>${data.titles["short-title"]._text}</li>
           <li>${data.authors["main-author"]._text}</li>
           <li>${undef(data)}</li>
-      </ul>`;
-      })
-      .join("");
+      </ul>
+      <button class="addButton" id="${data.id._attributes.nativeid}">+</button>`;
+    }).join("");
 
-    id.insertAdjacentHTML('afterbegin', covers);
+    remove('wrapper');
+    wrapper.insertAdjacentHTML('afterbegin', covers);
+    var addButton = document.querySelector(".addButton")
+    addButton.onclick = idCheck;
+    var idCheck = function(){
+      var id = this.className;
+       console.log('addButton geklikt');
+       console.log("ID is " + this.className);
+
+
+       console.log(data);
+     };
     // console.log(covers);
 
   }
 }
 
+function undef(data) {
+  // console.log(data);
+  var summary = data.summaries ? data.summaries.summary._text : "Geen beschrijving beschikbaar";
+  return summary;
+}
 
+function remove(id) {
+  console.log('removed '+id);
+  document.getElementById(id).innerHTML=''
+}
+
+var searchBtn = document.getElementById("searchBtn");
+// searchBtn.onclick = action.search()
+
+searchBtn.onclick = (function(){
+   console.log('searchBtn geklikt');
+   var searchValue = document.getElementById("searchValue").value;
+   remove('wrapper');
+   api(searchValue);
+ });
 
 
 init();
