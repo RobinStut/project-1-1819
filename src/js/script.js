@@ -14,12 +14,10 @@ var init = (function () {
       console.log();
       api();
     }
-    if (localStorage.getItem("search") !== null) {
+    else {
       console.log('init.if search bestaat');
       console.log('data gebruiken uit local storage');
-      local.parse();
-      render.overview(local.parse());
-      // console.log(local.parse());
+      render.overview(local.parse(localStorage.search));
     }
 });
 
@@ -52,15 +50,69 @@ var dataHandle = {
 }
 
 var local = {
-  parse: function () {
-    var parsing = JSON.parse(localStorage.getItem('search'));
+  parse: function (json) {
+    var parsing = JSON.parse(json);
     return parsing
+  },
+
+  selection:function(selection){
+    if (localStorage.getItem("selection") === null) {
+      console.log('selection if bestaat niet');
+      localStorage.setItem('selection', JSON.stringify(selection));
+    }
+    if (localStorage.getItem("selection") !== null) {
+      console.log('selection if bestaat wel');
+      var newArr = [selection];
+      // console.log(local.parse(localStorage.getItem("selection")));
+      // console.log(newArr);
+      var oldArr = [local.parse(localStorage.getItem("selection"))];
+      console.log(oldArr[0]);
+      // console.log(oldArr[1]);
+
+      var map = oldArr.map(function(selection, index) {
+
+        console.log(oldArr[index].id._attributes.nativeid.includes(selection.id._attributes.nativeid));
+        var idCheck = selection.id._attributes.nativeid
+        var oldArrCheck = oldArr[index].id._attributes.nativeid
+        if (oldArrCheck.includes(idCheck)) {
+          console.log('overeenkomst!');
+          console.log(oldArr);
+          localStorage.setItem('selection', JSON.stringify(oldArr));
+        }
+        else {
+          console.log('geen overeenkomst');
+          Array.prototype.push.apply(newArr, oldArr);
+          console.log(newArr);
+          localStorage.setItem('selection', JSON.stringify(newArr))
+        }
+
+      });
+
+
+      // console.log(oldArr.includes(selection));
+      //
+      //
+      //
+      //
+      // console.log(newArr);
+      // localStorage.setItem('selection', JSON.stringify(newArr))
+    }
   },
 }
 
+
 var render = {
+  contain: {
+    data:'',
+    clickedId:''
+  },
   overview: function (data) {
+    console.log('');
+    console.log('alle geladen data');
     console.log(data);
+    console.log('');
+    this.contain.data = data;
+    // storedData = data;
     var wrapper = document.getElementById('wrapper');
 
     var covers = data.map(function(data) {
@@ -76,20 +128,30 @@ var render = {
 
     remove('wrapper');
     wrapper.insertAdjacentHTML('afterbegin', covers);
-    var addButton = document.querySelector(".addButton")
-    addButton.onclick = idCheck;
-    var idCheck = function(){
-      var id = this.className;
-       console.log('addButton geklikt');
-       console.log("ID is " + this.className);
 
 
-       console.log(data);
-     };
-    // console.log(covers);
-
-  }
+    // bron van check id: https://gomakethings.com/attaching-multiple-elements-to-a-single-event-listener-in-vanilla-js/
+    document.addEventListener('click', function (event) {
+    if ( event.target.classList.contains( 'addButton' ) ) {
+        // Do something...
+        console.log('geklikt op add');
+        console.log(event.target.id);
+        render.contain.clickedId = event.target.id;
+        // console.log(render.contain.clickedId);
+        var findId = (data.find(render.findEqualId));
+        console.log(findId);
+        local.selection(findId)
+    }
+    }, false);
+  },
+  findEqualId:function(detail) {
+    console.log('findEqualId aangeroepen');
+    var equalCheck = detail.id._attributes.nativeid === render.contain.clickedId;
+    console.log(equalCheck);
+      return detail.id._attributes.nativeid === render.contain.clickedId;
+    },
 }
+
 
 function undef(data) {
   // console.log(data);
