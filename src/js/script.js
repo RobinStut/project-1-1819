@@ -56,46 +56,93 @@ var local = {
   },
 
   selection:function(selection){
-    if (localStorage.getItem("selection") === null) {
-      console.log('selection if bestaat niet');
-      localStorage.setItem('selection', JSON.stringify(selection));
-    }
     if (localStorage.getItem("selection") !== null) {
       console.log('selection if bestaat wel');
       var newArr = [selection];
       // console.log(local.parse(localStorage.getItem("selection")));
       // console.log(newArr);
-      var oldArr = [local.parse(localStorage.getItem("selection"))];
-      console.log(oldArr[0]);
-      // console.log(oldArr[1]);
+      var oldArr = local.parse(localStorage.getItem("selection"));
+      console.log(oldArr);
+      console.log([oldArr].length);
+      // console.log(oldArr[0]);
+      if ([oldArr].length === 1) {
+        console.log(('oldArr lengte is ') + [oldArr].length);
 
-      var map = oldArr.map(function(selection, index) {
-
-        console.log(oldArr[index].id._attributes.nativeid.includes(selection.id._attributes.nativeid));
-        var idCheck = selection.id._attributes.nativeid
-        var oldArrCheck = oldArr[index].id._attributes.nativeid
-        if (oldArrCheck.includes(idCheck)) {
-          console.log('overeenkomst!');
-          console.log(oldArr);
+        var mapOldArr = [oldArr].map(function(data) {
+          var selectionId = selection.id._attributes.nativeid;
+          console.log(data);
+          var oldArrId = data[0].id._attributes.nativeid;
+          console.log('selection id is '+(selection.id._attributes.nativeid));
+          console.log('oldArr id is '+(data[0].id._attributes.nativeid));
+          var compareId = selectionId === oldArrId;
+          console.log('vergelijking is '+compareId);
+          return compareId;
+        })
+        console.log(mapOldArr);
+        if (mapOldArr.includes(true)) {
+          console.log('id zit er al in');
           localStorage.setItem('selection', JSON.stringify(oldArr));
         }
         else {
-          console.log('geen overeenkomst');
-          Array.prototype.push.apply(newArr, oldArr);
+          console.log('id zit er nog niet in');
+          console.log(mapOldArr);
+          Array.prototype.push.apply(newArr, (local.parse(localStorage.getItem('selection'))));
           console.log(newArr);
-          localStorage.setItem('selection', JSON.stringify(newArr))
+
         }
 
-      });
+        // Array.prototype.push.apply(newArr, (local.parse(localStorage.getItem('selection'))));
+        // console.log(newArr);
+        // localStorage.setItem('selection', JSON.stringify(newArr));
+      }
+      if (oldArr.length > 1) {
+        console.log(('oldArr lengte is ') + oldArr.length);
+        var mapOldArr = oldArr.map(function(data) {
+          var selectionId = selection.id._attributes.nativeid;
+          var oldArrId = data.id._attributes.nativeid;
+          console.log('selection id is '+(selection.id._attributes.nativeid));
+          console.log('oldArr id is '+(data.id._attributes.nativeid));
+          var compareId = selectionId === oldArrId;
+          console.log('vergelijking is '+compareId);
+          return compareId;
+        })
+        console.log(mapOldArr);
+        if (mapOldArr.includes(true)) {
+          console.log('array bevat dit id al, hoeft niet toegevoegd te worden');
+          localStorage.setItem('selection', JSON.stringify(oldArr));
+        }
+        else {
+          console.log('array heeft id nog niet, toevoegen...');
+          Array.prototype.push.apply(newArr, (local.parse(localStorage.getItem('selection'))));
+          console.log(local.parse(localStorage.getItem('selection')));
+        }
+      }
+      // console.log(oldArr);
+      // console.log(oldArr[1]);
 
-
-      // console.log(oldArr.includes(selection));
+      // var map = oldArr.map(function(selection, index) {
+      //   // console.log(oldArr[index].id._attributes.nativeid.includes(selection.id._attributes.nativeid));
+      //   var idCheck = selection.id._attributes.nativeid
       //
+      //   var oldArrCheck = oldArr[index].id._attributes.nativeid
+      //   if (oldArrCheck.includes(idCheck)) {
+      //     console.log('overeenkomst!');
+      //     console.log(oldArr);
+      //     localStorage.setItem('selection', JSON.stringify(oldArr));
+      //   }
+      //   else {
+      //     console.log('geen overeenkomst');
+      //     Array.prototype.push.apply(newArr, oldArr);
+      //     console.log(newArr);
+      //     localStorage.setItem('selection', JSON.stringify(newArr))
+      //   }
       //
-      //
-      //
-      // console.log(newArr);
-      // localStorage.setItem('selection', JSON.stringify(newArr))
+      // });
+    }
+    if (localStorage.getItem("selection") === null) {
+      console.log('selection if bestaat niet');
+      localStorage.setItem('selection', JSON.stringify([selection]));
+      console.log(local.parse(localStorage.getItem("selection")));
     }
   },
 }
@@ -139,7 +186,7 @@ var render = {
         render.contain.clickedId = event.target.id;
         // console.log(render.contain.clickedId);
         var findId = (data.find(render.findEqualId));
-        console.log(findId);
+        // console.log(findId);
         local.selection(findId)
     }
     }, false);
