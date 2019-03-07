@@ -65,38 +65,9 @@ var local = {
       console.log(oldArr);
       console.log([oldArr].length);
       // console.log(oldArr[0]);
-      if ([oldArr].length === 1) {
-        console.log(('oldArr lengte is ') + [oldArr].length);
-
-        var mapOldArr = [oldArr].map(function(data) {
-          var selectionId = selection.id._attributes.nativeid;
-          console.log(data);
-          var oldArrId = data[0].id._attributes.nativeid;
-          console.log('selection id is '+(selection.id._attributes.nativeid));
-          console.log('oldArr id is '+(data[0].id._attributes.nativeid));
-          var compareId = selectionId === oldArrId;
-          console.log('vergelijking is '+compareId);
-          return compareId;
-        })
-        console.log(mapOldArr);
-        if (mapOldArr.includes(true)) {
-          console.log('id zit er al in');
-          localStorage.setItem('selection', JSON.stringify(oldArr));
-        }
-        else {
-          console.log('id zit er nog niet in');
-          console.log(mapOldArr);
-          Array.prototype.push.apply(newArr, (local.parse(localStorage.getItem('selection'))));
-          console.log(newArr);
-
-        }
-
-        // Array.prototype.push.apply(newArr, (local.parse(localStorage.getItem('selection'))));
-        // console.log(newArr);
-        // localStorage.setItem('selection', JSON.stringify(newArr));
-      }
-      if (oldArr.length > 1) {
-        console.log(('oldArr lengte is ') + oldArr.length);
+      console.log(local.parse(localStorage.getItem('selection')));
+      if ((local.parse(localStorage.getItem('selection')).length) > 1) {
+        console.log(('parse lengte is ') + local.parse(localStorage.getItem('selection')).length);
         var mapOldArr = oldArr.map(function(data) {
           var selectionId = selection.id._attributes.nativeid;
           var oldArrId = data.id._attributes.nativeid;
@@ -113,31 +84,52 @@ var local = {
         }
         else {
           console.log('array heeft id nog niet, toevoegen...');
-          Array.prototype.push.apply(newArr, (local.parse(localStorage.getItem('selection'))));
+          console.log(selection);
+          var currentData = local.parse(localStorage.getItem('selection'))
+          // console.log(currentData);
+          Array.prototype.push.apply(currentData, [selection]);
+          localStorage.setItem('selection', JSON.stringify(currentData));
           console.log(local.parse(localStorage.getItem('selection')));
+
+          // console.log(local.parse(localStorage.getItem('selection')));
         }
       }
-      // console.log(oldArr);
-      // console.log(oldArr[1]);
+      if ((local.parse(localStorage.getItem('selection')).length) === 1) {
+        console.log((local.parse(localStorage.getItem('selection'))).length);
+        console.log(('localparse selection lengte is ') + ((local.parse(localStorage.getItem('selection'))).length));
 
-      // var map = oldArr.map(function(selection, index) {
-      //   // console.log(oldArr[index].id._attributes.nativeid.includes(selection.id._attributes.nativeid));
-      //   var idCheck = selection.id._attributes.nativeid
-      //
-      //   var oldArrCheck = oldArr[index].id._attributes.nativeid
-      //   if (oldArrCheck.includes(idCheck)) {
-      //     console.log('overeenkomst!');
-      //     console.log(oldArr);
-      //     localStorage.setItem('selection', JSON.stringify(oldArr));
-      //   }
-      //   else {
-      //     console.log('geen overeenkomst');
-      //     Array.prototype.push.apply(newArr, oldArr);
-      //     console.log(newArr);
-      //     localStorage.setItem('selection', JSON.stringify(newArr))
-      //   }
-      //
-      // });
+        var mapOldArr = [oldArr].map(function(data) {
+          var selectionId = selection.id._attributes.nativeid;
+          // console.log(data);
+          var oldArrId = data[0].id._attributes.nativeid;
+          console.log('selection id is '+(selection.id._attributes.nativeid));
+          console.log('oldArr id is '+(data[0].id._attributes.nativeid));
+          var compareId = selectionId === oldArrId;
+          console.log('vergelijking is '+compareId);
+          return compareId;
+        })
+        console.log(mapOldArr);
+        if (mapOldArr.includes(true)) {
+          console.log('id zit er al in');
+          localStorage.setItem('selection', JSON.stringify(oldArr));
+          console.log(local.parse(localStorage.getItem('selection')));
+        }
+        else {
+          console.log('id zit er nog niet in');
+          console.log(mapOldArr);
+          console.log(selection);
+          var currentData = local.parse(localStorage.getItem('selection'))
+          console.log(currentData);
+          console.log(selection);
+          Array.prototype.push.apply(currentData, [selection]);
+          localStorage.setItem('selection', JSON.stringify(currentData));
+          console.log(local.parse(localStorage.getItem('selection')));
+        }
+
+        // Array.prototype.push.apply(newArr, (local.parse(localStorage.getItem('selection'))));
+        // console.log(newArr);
+        // localStorage.setItem('selection', JSON.stringify(newArr));
+      }
     }
     if (localStorage.getItem("selection") === null) {
       console.log('selection if bestaat niet');
