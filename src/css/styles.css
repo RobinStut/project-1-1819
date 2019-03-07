@@ -53,6 +53,14 @@ h2{
   font-size: 1.5rem;
 }
 
+caption{
+  font-family: 'Poppins', sans-serif;
+  color: #FF5661;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
 p{
   font-family: 'Avenir', sans-serif;
   font-weight: 500;
@@ -140,4 +148,168 @@ input{
   width: 100%;
   height: 4.5rem;
   font-size: 1.5rem;
+}
+
+.overview{
+      margin: .5rem;
+}
+
+.overview:nth-of-type(2) form{
+  background-color: rgba(0,0,0,0);
+  background-image: url("http://www.reliance-psychotherapie.com/medias/album/main-tendue.jpg?fx=r_640_640");
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.overview:nth-of-type(2) input{
+  background-color: rgba(0,0,0,0);
+}
+
+.overview a{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.overview:nth-of-type(1) a{
+  background-color: #FF5661;
+}
+
+.overview form{
+  margin: 0;
+}
+
+.overview input{
+  width: 100%;
+height: 12rem;
+font-size: 1.5rem;
+}
+
+.personalDetails{
+  display: flex;
+    margin: 1.5rem;
+    margin-bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.personalDetails img{
+  max-width: 8rem;
+  min-width: 8rem;
+  height: 8rem;
+  border-radius: 10rem;
+}
+
+.personalDetails h3{
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: #4A4A4A;
+
+}
+
+.acceptDeny{
+  display: flex;
+  justify-content: space-between;
+}
+
+.acceptDeny form{
+  width: 40%;
+  height: 2.5rem;
+}
+
+.acceptDeny form input{
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.acceptDeny form:nth-of-type(1) input{
+background-color: #3EEE9D;
+}
+
+.suggest{
+
+}
+
+.suggest form{
+  display: grid;
+    grid-template-columns: 10% auto 1fr;
+    align-items: center;
+}
+
+.suggest form:nth-of-type(2){
+  display: block;
+}
+
+.suggest form:nth-of-type(2) input{
+  background-color: #3EEE9D;
+}
+
+
+.suggest span{
+  font-family: 'Avenir', sans-serif;
+font-weight: 700;
+color: #4A4A4A;
+}
+
+.suggest p{
+  font-family: 'Avenir', sans-serif;
+font-weight: 200;
+color: #4A4A4A;
+text-align: right;
+margin: 0;
+line-height: 2rem;
+}
+
+.calender{
+  margin: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.calender table{
+  width: 100%;
+  font-family: 'Avenir', sans-serif;
+}
+
+.calender tbody td{
+  text-align: center;
+}
+
+.middle{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.middle input{
+  color: black;
+  background-color: white;
+}
+
+.history{
+
+}
+
+.history form{
+  display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.history span{
+  font-family: 'Avenir', sans-serif;
+font-weight: 700;
+color: #4A4A4A;
+}
+
+.history p{
+  font-family: 'Avenir', sans-serif;
+font-weight: 200;
+color: #4A4A4A;
+text-align: right;
+margin: 0;
+line-height: 2rem;
 }
