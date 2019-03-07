@@ -37,12 +37,13 @@ nav a svg{
   width: auto;
 }
 
-.algemeen img{
+img{
   max-width:100%;
+  min-width: 100%;
   border-radius: 5px;
 }
 
-.algemeen h2, p, form{
+h2, p, form, a{
   margin: 1.5rem;
 }
 
@@ -63,17 +64,80 @@ p{
 }
 
 .algemeen input{
+  width: 100%;
+  height: 4.5rem;
+  font-size: 1.5rem;
+}
+
+input{
   border: 0;
   padding: 0;
-  height: 4.5rem;
   border-radius: 5px;
-  width: 100%;
   color:white;
   background-color: #FF5661;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
 }
 
 .algemeen input:disabled{
   background-color: #DFDAD5;
+}
+
+.aanmelden{
+  max-width: 100%;
+}
+
+.aanmelden .small{
+  display: flex;
+  justify-content: center;
+}
+
+.aanmelden form{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.aanmelden label{
+    width: 100%;
+    font-family: 'Avenir';
+    font-weight: 700;
+    color: #4A4A4A;
+        margin-bottom: .5rem;
+}
+
+.aanmelden .small input{
+  width: 70%;
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.aanmelden .input{
+  background-color: white;
+  border: 1px solid #979797;
+  width: 100%;
+  height: 2rem;
+  padding-left: 1rem;
+  font-weight: 500;
+  font-family: 'Avenir';
+  margin-bottom: 1.5rem;
+  color: #4A4A4A;
+  font-size: .9rem;
+}
+
+.aanmelden textarea{
+  width: 100%;
+  border: 1px solid #979797;
+  border-radius: 5px;
+  padding-left: 1rem;
+  padding-top: .5rem;
+  font-weight: 500;
+  font-family: 'Avenir';
+  margin-bottom: 1.5rem;
+  color: #4A4A4A;
+  font-size: .9rem;
+}
+
+.big{
+  width: 100%;
+  height: 4.5rem;
+  font-size: 1.5rem;
 }
