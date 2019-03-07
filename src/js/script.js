@@ -156,13 +156,20 @@ var render = {
 
     var covers = data.map(function(data) {
       return `
-      <ul>
+          <article>
+          <div>
           <img src="${data.coverimages.coverimage[data.coverimages.coverimage.length -1]._text} " alt="${data.titles["short-title"]._text}">
-          <li>${data.titles["short-title"]._text}</li>
-          <li>${data.authors["main-author"]._text}</li>
-          <li>${undef(data)}</li>
-      </ul>
-      <button class="addButton" id="${data.id._attributes.nativeid}">+</button>`;
+          <button class="addButton" id="${data.id._attributes.nativeid}">+</button>
+          </div>
+          <div>
+          <span>${data.titles["short-title"]._text}</span>
+          <span>${data.authors["main-author"]._text}</span>
+          <p class="bio">${undef(data)}</p>
+          </div>
+          </article>
+          `;
+
+
     }).join("");
 
     remove('wrapper');
