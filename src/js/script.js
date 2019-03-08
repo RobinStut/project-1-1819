@@ -221,6 +221,7 @@ var render = {
 
         local.selection(findId);
         remove('selectCount');
+        remove('selectedCollection');
         render.selected();
       }
     }, false);
@@ -240,7 +241,7 @@ var render = {
         // console.log(findId);
         console.log(findWithAttr(removeFrom, id._attributes.nativeid, render.contain.clickedId))
         console.log(removeFrom[0].id._attributes.nativeid)
-        
+
         function findWithAttr(array, attr, value) {
           for (var i = 0; i < array.length; i += 1) {
             if (array[i].attr == value) {
