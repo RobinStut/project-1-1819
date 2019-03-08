@@ -18,43 +18,43 @@ nav span {
   text-overflow: ellipsis;
 }
 
-nav a{
+nav a {
   background-color: #FF5661;
-      width: 2.5rem;
-      height: 2.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2.5rem;
 }
 
-nav a svg{
+nav a svg {
   height: 1.5rem;
 }
 
-.algemeen{
+.algemeen {
   margin: 0.5rem;
   margin-bottom: 2rem;
   width: auto;
 }
 
-img{
-  max-width:100%;
+img {
+  max-width: 100%;
   min-width: 100%;
   border-radius: 5px;
 }
 
-h2, p, form, a{
+h2, p, form, a {
   margin: 1.5rem;
 }
 
-h2{
+h2 {
   font-family: 'Poppins', sans-serif;
   color: #FF5661;
   font-size: 1.5rem;
 }
 
-caption{
+caption {
   font-family: 'Poppins', sans-serif;
   color: #FF5661;
   font-size: 1.5rem;
@@ -62,64 +62,64 @@ caption{
   text-align: left;
 }
 
-p{
+p {
   font-family: 'Avenir', sans-serif;
   font-weight: 500;
   color: #4A4A4A;
 }
 
-.algemeen form{
+.algemeen form {
   cursor: pointer;
 }
 
-.algemeen input{
+.algemeen input {
   width: 100%;
   height: 4.5rem;
   font-size: 1.5rem;
 }
 
-input{
+input {
   border: 0;
   padding: 0;
   border-radius: 5px;
-  color:white;
+  color: white;
   background-color: #FF5661;
   font-family: 'Poppins', sans-serif;
 }
 
-.algemeen input:disabled{
+.algemeen input:disabled {
   background-color: #DFDAD5;
 }
 
-.aanmelden{
+.aanmelden {
   max-width: 100%;
 }
 
-.aanmelden .small{
+.aanmelden .small {
   display: flex;
   justify-content: center;
 }
 
-.aanmelden form{
+.aanmelden form {
   display: flex;
   flex-wrap: wrap;
 }
 
-.aanmelden label{
-    width: 100%;
-    font-family: 'Avenir';
-    font-weight: 700;
-    color: #4A4A4A;
-        margin-bottom: .5rem;
+.aanmelden label {
+  width: 100%;
+  font-family: 'Avenir';
+  font-weight: 700;
+  color: #4A4A4A;
+  margin-bottom: .5rem;
 }
 
-.aanmelden .small input{
+.aanmelden .small input {
   width: 70%;
   height: 3rem;
   font-size: 1rem;
 }
 
-.aanmelden .input{
+.aanmelden .input {
   background-color: white;
   border: 1px solid #979797;
   width: 100%;
@@ -132,7 +132,7 @@ input{
   font-size: .9rem;
 }
 
-.aanmelden textarea{
+.aanmelden textarea {
   width: 100%;
   border: 1px solid #979797;
   border-radius: 5px;
@@ -145,269 +145,262 @@ input{
   font-size: .9rem;
 }
 
-.big{
+.big {
   width: 100%;
   height: 4.5rem;
   font-size: 1.5rem;
 }
 
-.overview{
-      margin: .5rem;
+.overview {
+  margin: .5rem;
 }
 
-.overview:nth-of-type(2) form{
-  background-color: rgba(0,0,0,0);
+.overview:nth-of-type(2) form {
+  background-color: rgba(0, 0, 0, 0);
   background-image: url("http://www.reliance-psychotherapie.com/medias/album/main-tendue.jpg?fx=r_640_640");
   background-size: cover;
   border-radius: 5px;
 }
 
-.overview:nth-of-type(2) input{
-  background-color: rgba(0,0,0,0);
+.overview:nth-of-type(2) input {
+  background-color: rgba(0, 0, 0, 0);
 }
 
-.overview a{
+.overview a {
   color: white;
   font-family: 'Poppins', sans-serif;
   font-size: 1.5rem;
   text-decoration: none;
 }
 
-.overview:nth-of-type(1) a{
+.overview:nth-of-type(1) a {
   background-color: #FF5661;
 }
 
-.overview form{
+.overview form {
   margin: 0;
 }
 
-.overview input{
+.overview input {
   width: 100%;
-height: 12rem;
-font-size: 1.5rem;
+  height: 12rem;
+  font-size: 1.5rem;
 }
 
-.personalDetails{
+.personalDetails {
   display: flex;
-    margin: 1.5rem;
-    margin-bottom: 0;
-    justify-content: space-between;
-    align-items: center;
-
+  margin: 1.5rem;
+  margin-bottom: 0;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.personalDetails img{
+.personalDetails img {
   max-width: 8rem;
   min-width: 8rem;
   height: 8rem;
   border-radius: 10rem;
 }
 
-.personalDetails h3{
+.personalDetails h3 {
   font-size: 2rem;
   font-family: 'Poppins', sans-serif;
   color: #4A4A4A;
-
 }
 
-.acceptDeny{
+.acceptDeny {
   display: flex;
   justify-content: space-between;
 }
 
-.acceptDeny form{
+.acceptDeny form {
   width: 40%;
   height: 2.5rem;
 }
 
-.acceptDeny form input{
+.acceptDeny form input {
   width: 100%;
   height: 100%;
   font-size: 1rem;
 }
 
-.acceptDeny form:nth-of-type(1) input{
-background-color: #3EEE9D;
-}
-
-.suggest{
-
-}
-
-.suggest form{
-  display: grid;
-    grid-template-columns: 10% auto 1fr;
-    align-items: center;
-}
-
-.suggest form:nth-of-type(2){
-  display: block;
-}
-
-.suggest form:nth-of-type(2) input{
+.acceptDeny form:nth-of-type(1) input {
   background-color: #3EEE9D;
 }
 
+.suggest {}
 
-.suggest span{
-  font-family: 'Avenir', sans-serif;
-font-weight: 700;
-color: #4A4A4A;
+.suggest form {
+  display: grid;
+  grid-template-columns: 10% auto 1fr;
+  align-items: center;
 }
 
-.suggest p{
-  font-family: 'Avenir', sans-serif;
-font-weight: 200;
-color: #4A4A4A;
-text-align: right;
-margin: 0;
-line-height: 2rem;
+.suggest form:nth-of-type(2) {
+  display: block;
 }
 
-.calender{
+.suggest form:nth-of-type(2) input {
+  background-color: #3EEE9D;
+}
+
+.suggest span {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 700;
+  color: #4A4A4A;
+}
+
+.suggest p {
+  font-family: 'Avenir', sans-serif;
+  font-weight: 200;
+  color: #4A4A4A;
+  text-align: right;
+  margin: 0;
+  line-height: 2rem;
+}
+
+.calender {
   margin: 1.5rem;
   display: flex;
   justify-content: center;
 }
 
-.calender table{
+.calender table {
   width: 100%;
   font-family: 'Avenir', sans-serif;
 }
 
-.calender tbody td{
+.calender tbody td {
   text-align: center;
 }
 
-.middle{
+.middle {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.middle input{
+.middle input {
   color: black;
   background-color: white;
 }
 
-.history{
+.history {}
 
-}
-
-.history form{
+.history form {
   display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
+  grid-template-columns: auto 1fr;
+  align-items: center;
 }
 
-.history span{
+.history span {
   font-family: 'Avenir', sans-serif;
-font-weight: 700;
-color: #4A4A4A;
+  font-weight: 700;
+  color: #4A4A4A;
 }
 
-.history p{
+.history p {
   font-family: 'Avenir', sans-serif;
-font-weight: 200;
-color: #4A4A4A;
-text-align: right;
-margin: 0;
-line-height: 2rem;
+  font-weight: 200;
+  color: #4A4A4A;
+  text-align: right;
+  margin: 0;
+  line-height: 2rem;
 }
 
-.location{
+.location {
   margin: 1.5rem;
 }
 
-.location h2, p{
-  margin:0;
+.location h2 {
+  margin: 0;
 }
 
 .location p {
+  margin: 0;
   margin-top: 1rem;
 }
 
-.location iframe{
+.location iframe {
   width: 100%;
   height: 14rem;
-    /* margin: 1.5rem;
+  /* margin: 1.5rem;
     margin-bottom: 0; */
 }
 
-.search fieldset{
+.search fieldset {
   border: none;
-    padding: 0;
-    display: inline-block;
-    flex-wrap: wrap;
-    background-color: #DFDAD5;
-    width: 100%;
-    height: 3rem;
-    border-radius: 5px;
+  padding: 0;
+  display: inline-block;
+  flex-wrap: wrap;
+  background-color: #DFDAD5;
+  width: 100%;
+  height: 3rem;
+  border-radius: 5px;
 }
 
-.search input{
+.search input {
   background-color: #DFDAD5;
-height: 2rem;
-width: calc(100% - 6.3rem);
-/* width: 100%; */
-height: 97%;
-padding-left:1rem;
-color:#FF5661;
+  height: 2rem;
+  width: calc(100% - 6.3rem);
+  /* width: 100%; */
+  height: 97%;
+  padding-left: 1rem;
+  color: #FF5661;
 }
 
-.search button{
+.search button {
   background-color: #DFDAD5;
-  border:none;
+  border: none;
   height: 2rem;
   width: 5rem;
   height: 100%;
   text-align: right;
   border-radius: 5px;
-
 }
 
-.results{
+.results {
   margin: 1.5rem;
 }
 
-.results h2{
+.results h2 {
   margin: 0;
 }
 
-.results article{
-display: grid;
-grid-template-columns: auto 1fr;
-height: auto;
+.results article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: auto;
 }
 
-.results img{
+.results img {
   background-color: #FF5661;
-/* max-height: 7rem; */
-/* min-width: 100%; */
-/* min-height: 100%; */
-max-width: 7rem;
-border-radius: 0;
-height: auto;
+  /* max-height: 7rem; */
+  /* min-width: 100%; */
+  /* min-height: 100%; */
+  max-width: 7rem;
+  border-radius: 0;
+  height: auto;
 }
 
-.results div:nth-of-type(1){
+.results div:nth-of-type(1) {
   position: relative;
 }
 
-.results div:nth-of-type(2){
+.results div:nth-of-type(2) {
   margin-left: 1.5rem;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
 }
 
-.results div:nth-of-type(2) span:nth-of-type(1){
+.results div:nth-of-type(2) span:nth-of-type(1) {
   color: #4A4A4A;
   font-family: 'Avenir';
   font-weight: 700;
 }
 
-.results div:nth-of-type(2) span:nth-of-type(2){
+.results div:nth-of-type(2) span:nth-of-type(2) {
   color: #4A4A4A;
   font-family: 'Avenir';
   font-weight: 500;
@@ -418,26 +411,92 @@ height: auto;
   font-weight: 200;
 }
 
-.results .addButton{
+.results .addButton {
   position: absolute;
-top: .5rem;
-left: .5rem;
-height: 2.5rem;
-width: 2.5rem;
-background-color: rgba(0, 0, 0, 0);
-color: white;
-font-size: 1.8rem;
-line-height: 1.5rem;
-padding: 0;
-padding-bottom: 1rem;
-border: 4px white solid;
-border-radius: 5px;
+  top: .5rem;
+  left: .5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  padding: 0;
+  padding-bottom: 1rem;
+  border: 4px white solid;
+  border-radius: 5px;
 }
 
-.results section article{
+.results section article {
   padding-bottom: 1.5rem;
 }
 
-.loader img{
+.loader img {
   background-color: rgba(255, 0, 0, 0);
+}
+
+.selectCount {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #FF5661;
+  border-top-left-radius: 5px;
+}
+
+.selected{
+  margin: 1.5rem;
+}
+
+.selected h2{
+  margin:0;
+  margin-bottom: 1.5rem;
+}
+
+.selectCount a {
+  font-family: 'Avenir';
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 2rem;
+  color: white;
+}
+
+.selectedCollection{
+  display: -webkit-inline-box;
+  width: 100%;
+overflow-x: scroll;
+height: 20rem;
+overflow-y: hidden;
+}
+
+
+.selectedCollection article{
+  height: 3rem;
+  width: 7rem;
+  margin-right: 1.5rem;
+}
+
+.selectedCollection div{
+  position: relative;
+}
+
+.selectedCollection button{
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  padding: 0;
+  padding-bottom: 1rem;
+  border: 4px white solid;
+  border-radius: 5px;
+}
+
+.selectedCollection span{
+  color: #4A4A4A;
+  font-family: 'Avenir';
+  font-weight: 700;
 }
