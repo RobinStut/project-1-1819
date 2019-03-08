@@ -17,6 +17,7 @@ var init = (function () {
     else {
       console.log('init.if search bestaat');
       console.log('data gebruiken uit local storage');
+      render.loader();
       render.overview(local.parse(localStorage.search));
     }
 });
@@ -45,6 +46,7 @@ var dataHandle = {
     localStorage.setItem('search', JSON.stringify(incoming));
     var parsedLocalData = JSON.parse(localStorage.getItem('search'));
     // console.log(parsedLocalData);
+    render.loader();
     render.overview(parsedLocalData);
   },
 }
@@ -145,7 +147,15 @@ var render = {
     data:'',
     clickedId:''
   },
+  loader: function(){
+    var wrapper = document.getElementById('loader');
+    var loader = `
+    <img src="img/loader.gif" alt="loader">
+    <h2>Aan het laden...</h2>`;
+    wrapper.insertAdjacentHTML('afterbegin', loader);
+  },
   overview: function (data) {
+    remove('loader');
     console.log('');
     console.log('alle geladen data');
     console.log(data);
@@ -216,7 +226,9 @@ var searchBtn = document.getElementById("searchBtn");
 searchBtn.onclick = (function(){
    console.log('searchBtn geklikt');
    var searchValue = document.getElementById("searchValue").value;
+   render.loader();
    remove('wrapper');
+
    api(searchValue);
  });
 

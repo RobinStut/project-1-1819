@@ -437,3 +437,7 @@ border-radius: 5px;
 .results section article{
   padding-bottom: 1.5rem;
 }
+
+.loader img{
+  background-color: rgba(255, 0, 0, 0);
+}
